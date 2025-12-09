@@ -1,0 +1,74 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Deployment archives
+*.zip
+*.tar.gz
+*.tar
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Utility scripts (optional - uncomment if you don't want to track these)
+# public/convert_to_cloudinary.py
+# public/add_cloudinary_folder.py
+# public/replace_cloud_name.sh
+
+# Video files (large files - using Cloudinary instead)
+*.MP4
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.mkv
+
+# Image files in root (using Cloudinary instead)
+# Note: Keep public/images/ if you want local fallbacks
+images/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs (if any)
+dist/
+build/
+*.min.js
+*.min.css
+

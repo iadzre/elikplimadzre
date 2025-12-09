@@ -1,0 +1,542 @@
+/* Minimal CSS - Only styles that can't be done with Tailwind */
+
+/* Custom Cursor - Better mobile detection using pointer media query */
+@media (pointer: fine) and (min-width: 769px) {
+    html, body, * {
+        cursor: none !important;
+    }
+    
+    html *, body * {
+        cursor: none !important;
+    }
+    
+    .custom-cursor {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: #2A2F7F;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease, border 0.2s ease, background-color 0.2s ease;
+        mix-blend-mode: difference;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .custom-cursor.visible {
+        opacity: 1;
+        visibility: visible;
+        will-change: transform;
+    }
+    
+    .custom-cursor.hover {
+        width: 32px;
+        height: 32px;
+        background-color: transparent;
+        border: 2px solid #2A2F7F;
+    }
+    
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        .custom-cursor {
+            transition: none;
+        }
+    }
+}
+
+/* Hide all scrollbars globally */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* Font Family Classes */
+.variex {
+    font-family: 'Variex OT', 'Inter', sans-serif !important;
+}
+.josefin {
+    font-family: 'Josefin Sans', 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+}
+.montserrat {
+    font-family: 'Montserrat', 'Inter', sans-serif !important;
+    font-weight: 300 !important;
+}
+.gazzetta-bold {
+    font-family: 'Gazzetta', 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+}
+.gazzetta-light {
+    font-family: 'Gazzetta', 'Inter', sans-serif !important;
+    font-weight: 200 !important;
+    font-style: italic !important;
+}
+.new-kansas {
+    font-family: 'New Kansas', 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+}
+.tracking-2x {
+    letter-spacing: 0.2em !important;
+}
+
+/* Hamburger Menu Animation */
+#hamburger.open span:first-of-type {
+    transform: rotate(45deg) translateY(6px);
+}
+#hamburger.open span:last-of-type {
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 32%;
+    max-width: 420px;
+    min-width: 280px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f3fcf0 0%, #f4f6e5 50%, #f5f1ca 100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    border-left: 1px solid rgba(42, 47, 127, 0.1);
+}
+.side-panel.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+    pointer-events: none;
+}
+.overlay.open { 
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Header Blur Effect */
+header.header-blur {
+    background: rgba(243, 252, 240, 0) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Video Controls */
+#videoSeek {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+}
+
+#videoSeek::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #F45D01;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#videoSeek::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #F45D01;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+#videoVolume {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+}
+
+#videoVolume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #F45D01;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#videoVolume::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #F45D01;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Project Modal */
+.project-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.project-modal .modal-content img,
+.project-modal .modal-content video {
+    animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+}
+    to {
+        opacity: 1;
+        transform: scale(1);
+}
+}
+
+/* Projects Fade Effects */
+.projects-fade-left,
+.projects-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.projects-fade-left {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(243, 252, 240, 1) 0%,
+        rgba(243, 252, 240, 0.95) 20%,
+        rgba(243, 252, 240, 0.85) 40%,
+        rgba(243, 252, 240, 0.6) 60%,
+        rgba(243, 252, 240, 0.3) 80%,
+        rgba(243, 252, 240, 0) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: linear-gradient(
+        to right,
+        black 0%,
+        rgba(0, 0, 0, 0.95) 15%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.2) 85%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        black 0%,
+        rgba(0, 0, 0, 0.95) 15%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.2) 85%,
+        transparent 100%
+    );
+}
+
+.projects-fade-right {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(243, 252, 240, 1) 0%,
+        rgba(243, 252, 240, 0.95) 20%,
+        rgba(243, 252, 240, 0.85) 40%,
+        rgba(243, 252, 240, 0.6) 60%,
+        rgba(243, 252, 240, 0.3) 80%,
+        rgba(243, 252, 240, 0) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: linear-gradient(
+        to left,
+        black 0%,
+        rgba(0, 0, 0, 0.95) 15%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.2) 85%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to left,
+        black 0%,
+        rgba(0, 0, 0, 0.95) 15%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.2) 85%,
+        transparent 100%
+    );
+}
+
+/* Timeline fade effects are now handled with Tailwind classes */
+
+/* Software Fade Effects */
+.software-fade-left,
+.software-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .software-fade-left,
+    .software-fade-right {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .software-fade-left,
+    .software-fade-right {
+        width: 300px;
+    }
+}
+
+.software-fade-left {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(243, 252, 240, 1) 0%,
+        rgba(243, 252, 240, 0.95) 20%,
+        rgba(243, 252, 240, 0.85) 40%,
+        rgba(243, 252, 240, 0.6) 60%,
+        rgba(243, 252, 240, 0.3) 80%,
+        rgba(243, 252, 240, 0) 100%
+    );
+}
+
+.software-fade-right {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(243, 252, 240, 1) 0%,
+        rgba(243, 252, 240, 0.95) 20%,
+        rgba(243, 252, 240, 0.85) 40%,
+        rgba(243, 252, 240, 0.6) 60%,
+        rgba(243, 252, 240, 0.3) 80%,
+        rgba(243, 252, 240, 0) 100%
+    );
+}
+
+/* Software slider track - ensure no wrapping */
+#software-slider-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+/* Prevent mouse interaction with software section (but allow links) */
+section:has(#software-slider),
+#software-slider {
+    pointer-events: auto;
+    user-select: none;
+}
+
+/* Allow links to be clickable */
+#software-slider-track a {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* Prevent interaction with non-link items */
+#software-slider-track > div {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Responsive Side Panel */
+@media (max-width: 1023px) {
+    .side-panel {
+        width: 85%;
+        max-width: 400px;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-panel {
+        width: 100%;
+        max-width: none;
+        min-width: 100%;
+    }
+    }
+    
+/* Form Error State */
+.error {
+    border-color: #e83685 !important;
+}
+
+/* Accessibility - Focus Styles (buttons only, links have no outline) */
+button:focus {
+    outline: 2px solid #F45D01;
+    outline-offset: 2px;
+}
+
+/* Client Comments Section - Mobile Responsive */
+.client-comments-section {
+    width: 100%;
+}
+
+.client-comments-container {
+    width: 100%;
+    position: relative;
+}
+
+.client-comments-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.client-comment-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mobile optimizations for comments */
+@media (max-width: 640px) {
+    .client-comment-card {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .client-comments-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Remove all outlines from links */
+a, a:hover, a:focus, a:active, a:visited {
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none;
+}
+
+/* Remove outlines from project tiles (hover preview links) */
+.project-tile, 
+.project-tile:hover, 
+.project-tile:focus, 
+.project-tile:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.project-tile * {
+    outline: none !important;
+}
+
+/* Skip to Content Link */
+.skip-to-content {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 1000;
+    background: #fff;
+    color: #2A2F7F;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: left 0.3s;
+}
+
+.skip-to-content:focus {
+    left: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    }
+    
+/* Remove outline from header nav links on hover/focus */
+header nav a:hover, header nav a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove outline from header logo link on hover/focus */
+header a[href="index.html"]:hover,
+header a[href="index.html"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove outline from portfolio PNG in header */
+header a img:focus, header a img:active, header a img:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Software slider edge gradients - Longer and smoother */
+.software-slider-gradient-left {
+    background: linear-gradient(to right, 
+        #fff 0%, 
+        rgba(255,255,255,0.95) 20%, 
+        rgba(255,255,255,0.85) 40%, 
+        rgba(255,255,255,0.6) 60%, 
+        rgba(255,255,255,0.3) 80%, 
+        rgba(255,255,255,0) 100%);
+}
+
+.software-slider-gradient-right {
+    background: linear-gradient(to left, 
+        #fff 0%, 
+        rgba(255,255,255,0.95) 20%, 
+        rgba(255,255,255,0.85) 40%, 
+        rgba(255,255,255,0.6) 60%, 
+        rgba(255,255,255,0.3) 80%, 
+        rgba(255,255,255,0) 100%);
+}
