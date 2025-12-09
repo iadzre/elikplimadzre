@@ -4,6 +4,14 @@
  * Works with both aggregated JSON files and individual files
  */
 
+// Conditional logging - disabled in production
+const DEBUG = false; // Set to true for development debugging
+const logger = {
+    log: (...args) => DEBUG && console.log(...args),
+    error: (...args) => DEBUG && console.error(...args),
+    warn: (...args) => DEBUG && console.warn(...args)
+};
+
 // Load all projects from individual files or aggregated JSON
 async function loadProjects() {
     try {
@@ -17,7 +25,7 @@ async function loadProjects() {
             return;
         }
     } catch (error) {
-        console.log('Aggregated file not found, trying individual files...');
+        logger.log('Aggregated file not found, trying individual files...');
     }
 
     // Fallback: Load individual files
@@ -27,7 +35,7 @@ async function loadProjects() {
             renderProjects(projects);
         }
     } catch (error) {
-        console.error('Error loading projects:', error);
+        logger.error('Error loading projects:', error);
     }
 }
 
@@ -46,7 +54,7 @@ function renderProjects(projects) {
                  document.querySelector('.grid.grid-cols-2.sm\\:grid-cols-2.lg\\:grid-cols-3') ||
                  document.querySelector('.grid.grid-cols-2');
     if (!grid) {
-        console.warn('Projects grid not found, CMS data loaded but not rendered');
+        logger.warn('Projects grid not found, CMS data loaded but not rendered');
         return;
     }
 
@@ -148,7 +156,7 @@ async function loadComments() {
             return;
         }
     } catch (error) {
-        console.log('Comments file not found');
+        logger.log('Comments file not found');
     }
 }
 
@@ -237,7 +245,7 @@ async function loadSlider() {
             return;
         }
     } catch (error) {
-        console.log('Slider file not found');
+        logger.log('Slider file not found');
     }
 }
 
@@ -298,12 +306,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.projects-page')) {
         // Try to load from CMS, but don't break if it fails
         loadProjects().catch(err => {
-            console.log('CMS data not available, using existing HTML content');
+            logger.log('CMS data not available, using existing HTML content');
             // Silently fall back to existing HTML - no user action needed
         });
         
         loadComments().catch(err => {
-            console.log('Comments data not available, using existing HTML content');
+            logger.log('Comments data not available, using existing HTML content');
             // Silently fall back to existing HTML - no user action needed
         });
     }
@@ -311,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only load slider on index page
     if (document.querySelector('.index-page') || document.querySelector('body.index-page')) {
         loadSlider().catch(err => {
-            console.log('Slider data not available, using existing HTML content');
+            logger.log('Slider data not available, using existing HTML content');
             // Silently fall back to existing HTML - no user action needed
         });
     }
