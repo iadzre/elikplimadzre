@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "title": "Christa Valley International",
+  "category": "Digital",
+  "subcategory": "Brand System",
+  "description": "Identity · Branding · Design",
+  "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236106/cover_hsbnd4.jpg",
+  "mediaType": "image",
+  "mediaSources": [
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235995/Christa_Valley_Page_01_aoiq1b.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235992/Christa_Valley_Page_05_sjtghr.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235991/Christa_Valley_Page_06_fklocx.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235987/Christa_Valley_Page_07_lzpysh.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235985/Christa_Valley_Page_08_tqhpkc.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235986/Christa_Valley_Page_09_baca3f.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235993/Christa_Valley_Page_11_tqezm7.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235990/Christa_Valley_Page_12_tkyrwg.jpg",
+    "https://res.cloudinary.com/dimolecad/image/upload/v1765235988/Christa_Valley_Page_13_vdze7h.jpg"
+  ],
+  "youtubeId": null,
+  "youtubeThumbnail": null
+}
+

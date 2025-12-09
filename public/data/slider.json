@@ -1,0 +1,34 @@
+{
+  "slider": [
+    {
+      "id": 1,
+      "image": "https://res.cloudinary.com/dimolecad/image/upload/v1765236117/_DSF2248_w6itgt.jpg",
+      "alt": "Slide 1",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "image": "https://res.cloudinary.com/dimolecad/image/upload/v1765236066/DSCF6665_zjasa5.jpg",
+      "alt": "Slide 2",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "image": "https://res.cloudinary.com/dimolecad/image/upload/v1765236044/3d_model_03_k6tgod.png",
+      "alt": "Slide 3",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "image": "https://res.cloudinary.com/dimolecad/image/upload/v1765235969/3d_model._01_iuch4f.jpg",
+      "alt": "Slide 4",
+      "order": 4
+    },
+    {
+      "id": 5,
+      "image": "https://res.cloudinary.com/dimolecad/image/upload/v1765235970/Christa_Valley_Page_05_l204e5.jpg",
+      "alt": "Slide 5",
+      "order": 5
+    }
+  ]
+}

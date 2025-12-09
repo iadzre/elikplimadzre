@@ -1,0 +1,9 @@
+# Gazzetta Font Files Placeholder
+
+Add your Gazzetta font files here:
+- Gazzetta-Regular.woff2
+- Gazzetta-Regular.woff
+- Gazzetta-Regular.ttf
+- Gazzetta-Bold.woff2
+- Gazzetta-Bold.woff
+- Gazzetta-Bold.ttf

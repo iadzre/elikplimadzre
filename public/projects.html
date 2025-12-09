@@ -10,11 +10,9 @@
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/dimolecad/image/upload/v1765235983/favicon_pim5wi.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/variex-ot" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/gazzetta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/new-kansas" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body class="projects-page bg-gradient-to-b from-[#f3fcf0] to-[#f5f1ca] min-h-screen flex flex-col">
@@ -89,7 +87,8 @@
                     <p class="text-sm md:text-base text-[#2A2F7F] mt-2 max-w-3xl mx-auto">Curated drops from branding labs, product experiments and editorial playgrounds. Each tile mirrors a Behance-style square so you can scan quickly and dive deeper later.</p>
                 </div>
                 <div class="w-full px-4 sm:px-6 md:px-8 lg:px-12 pb-16 md:pb-20">
-                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
+                    <div id="projects-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
+                            <!-- Project tiles loaded dynamically from CMS -->
                             <!-- Tile 1 -->
                         <article class="project-tile relative aspect-square w-full border border-gray-200 cursor-pointer hover:border-[#F45D01] hover:shadow-lg transition-all duration-300 group overflow-hidden" data-media-type="image" data-media-srcs="https://res.cloudinary.com/dimolecad/image/upload/v1765235995/Christa_Valley_Page_01_aoiq1b.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235992/Christa_Valley_Page_05_sjtghr.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235991/Christa_Valley_Page_06_fklocx.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235987/Christa_Valley_Page_07_lzpysh.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235985/Christa_Valley_Page_08_tqhpkc.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235986/Christa_Valley_Page_09_baca3f.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235993/Christa_Valley_Page_11_tqezm7.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235990/Christa_Valley_Page_12_tkyrwg.jpg,https://res.cloudinary.com/dimolecad/image/upload/v1765235988/Christa_Valley_Page_13_vdze7h.jpg">
                             <img src="https://res.cloudinary.com/dimolecad/image/upload/v1765236106/cover_hsbnd4.jpg" alt="Christa Valley International" class="absolute inset-0 w-full h-full object-cover" />
@@ -586,6 +585,7 @@
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="js/main.js"></script>
+    <script src="js/cms-loader.js"></script>
     <script>
         // Header blur on scroll up
         let lastScrollTop = 0;

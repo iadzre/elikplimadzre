@@ -1,0 +1,13 @@
+# Gazzetta Font Files
+
+Please add the following font files to this folder:
+
+Required files:
+- Gazzetta-Regular.woff2
+- Gazzetta-Regular.woff
+- Gazzetta-Regular.ttf
+- Gazzetta-Bold.woff2
+- Gazzetta-Bold.woff
+- Gazzetta-Bold.ttf
+
+Download from: https://www.cdnfonts.com/gazzetta.font

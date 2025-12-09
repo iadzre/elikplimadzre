@@ -62,9 +62,6 @@
 }
 
 /* Font Family Classes */
-.variex {
-    font-family: 'Variex OT', 'Inter', sans-serif !important;
-}
 .josefin {
     font-family: 'Josefin Sans', 'Inter', sans-serif !important;
     font-weight: 400 !important;
@@ -73,18 +70,26 @@
     font-family: 'Montserrat', 'Inter', sans-serif !important;
     font-weight: 300 !important;
 }
+/* Gazzetta Font Face - Local Fonts (Only weights actually used) */
+@font-face {
+    font-family: 'Gazzetta';
+    src: url('../fonts/Gazzetta-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gazzetta';
+    src: url('../fonts/Gazzetta-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 .gazzetta-bold {
     font-family: 'Gazzetta', 'Inter', sans-serif !important;
     font-weight: 700 !important;
-}
-.gazzetta-light {
-    font-family: 'Gazzetta', 'Inter', sans-serif !important;
-    font-weight: 200 !important;
-    font-style: italic !important;
-}
-.new-kansas {
-    font-family: 'New Kansas', 'Inter', sans-serif !important;
-    font-weight: 400 !important;
 }
 .tracking-2x {
     letter-spacing: 0.2em !important;
