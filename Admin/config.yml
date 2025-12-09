@@ -68,8 +68,9 @@ collections:
                   label: "Image/Video URL"
                   name: "url"
                   widget: "string"
-                  hint: "Upload image via CMS (saved to /media/uploads/) or paste Cloudinary/external URL"
-                hint: "List of image/video URLs for gallery. Use /media/uploads/filename.jpg for uploaded images or full Cloudinary URLs"
+                  hint: "Paste Cloudinary/external URL or /media/uploads/filename.jpg for uploaded images"
+                hint: "List of image/video URLs for gallery. Each entry should be a full URL (Cloudinary or external) or /media/uploads/filename.jpg"
+                default: []
               - { label: "YouTube ID(s)", name: "youtubeId", widget: "string", required: false, hint: "Single ID (e.g., 8ZoAk7A5TVg) or comma-separated for multiple videos" }
               - { label: "YouTube Thumbnail ID", name: "youtubeThumbnail", widget: "string", required: false, hint: "YouTube ID to use for thumbnail (usually first video ID)" }
 

@@ -1,0 +1,5 @@
+# Netlify Redirects
+# Ensure /admin route works correctly
+
+/admin/*  /admin/index.html  200
+
