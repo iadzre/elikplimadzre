@@ -86,17 +86,36 @@ function createProjectTile(project) {
     
     if (project.mediaSources && project.mediaSources.length > 0) {
         // Handle media sources - support both uploaded media and Cloudinary URLs
+        // Support both formats: array of strings OR array of objects with 'url' property
         const processedSources = project.mediaSources.map(source => {
-            const url = typeof source === 'string' ? source : (source.url || source);
-            if (url.startsWith('/media/uploads/')) {
-                return url;
-            } else if (url.startsWith('http')) {
-                return url;
+            let url = '';
+            
+            // Handle different source formats
+            if (typeof source === 'string') {
+                url = source;
+            } else if (source && typeof source === 'object') {
+                // CMS saves as object with 'url' property
+                url = source.url || source.src || String(source);
             } else {
-                return `/media/uploads/${url}`;
+                url = String(source);
             }
-        });
-        article.setAttribute('data-media-srcs', processedSources.join(','));
+            
+            // Process URL
+            if (url && typeof url === 'string' && url.trim() !== '') {
+                if (url.startsWith('/media/uploads/')) {
+                    return url;
+                } else if (url.startsWith('http')) {
+                    return url;
+                } else {
+                    return `/media/uploads/${url}`;
+                }
+            }
+            return null;
+        }).filter(url => url !== null); // Remove any null/empty URLs
+        
+        if (processedSources.length > 0) {
+            article.setAttribute('data-media-srcs', processedSources.join(','));
+        }
     }
     
     if (project.youtubeId) {
@@ -110,19 +129,31 @@ function createProjectTile(project) {
 
     // Handle cover image - support both uploaded media and Cloudinary URLs
     // Priority: coverImageUrl (Cloudinary) > coverImage (uploaded)
-    const coverImage = project.coverImageUrl || project.coverImage || '';
+    // Handle both string URLs and object format from CMS
+    let coverImage = project.coverImageUrl || project.coverImage || '';
+    
+    // If coverImage is an object (from CMS), extract the URL
+    if (coverImage && typeof coverImage === 'object') {
+        coverImage = coverImage.url || coverImage.src || '';
+    }
+    
     let coverImageSrc = '';
     if (coverImage) {
-        if (coverImage.startsWith('http')) {
+        if (typeof coverImage === 'string' && coverImage.startsWith('http')) {
             // Full URL (Cloudinary or external)
             coverImageSrc = coverImage;
-        } else if (coverImage.startsWith('/media/uploads/')) {
+        } else if (typeof coverImage === 'string' && coverImage.startsWith('/media/uploads/')) {
             // Already has full path
             coverImageSrc = coverImage;
-        } else {
+        } else if (typeof coverImage === 'string') {
             // Just filename, add path
             coverImageSrc = `/media/uploads/${coverImage}`;
         }
+    }
+    
+    // Fallback to placeholder if no cover image
+    if (!coverImageSrc) {
+        coverImageSrc = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f3f3" width="400" height="400"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" dy="10.5" font-weight="bold" x="50%25" y="50%25" text-anchor="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
     }
     
     // Build HTML
