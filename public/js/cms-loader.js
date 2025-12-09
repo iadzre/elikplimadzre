@@ -217,26 +217,10 @@ function renderComments(comments) {
         wrapper.appendChild(card);
     });
 
-    // Update indicators
+    // Update indicators (non-clickable, visual only)
     updateCommentIndicators(comments.length);
     
-    // Re-initialize comment carousel (use existing main.js logic)
-    // The comment carousel is initialized in main.js, so we just need to trigger it
-    setTimeout(() => {
-        const commentIndicators = document.querySelectorAll('.comment-indicator');
-        if (commentIndicators.length > 0) {
-            // Re-attach event listeners
-            commentIndicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    const commentsWrapper = document.querySelector('.client-comments-wrapper');
-                    if (commentsWrapper) {
-                        commentsWrapper.style.transform = `translateX(-${index * 100}%)`;
-                        updateCommentIndicators(comments.length);
-                    }
-                });
-            });
-        }
-    }, 100);
+    // Comment carousel auto-rotates - indicators are visual only
 }
 
 function updateCommentIndicators(count) {
@@ -257,10 +241,16 @@ function updateCommentIndicators(count) {
 
     indicatorsContainer.innerHTML = '';
     for (let i = 0; i < count; i++) {
-        const button = document.createElement('button');
-        button.className = `comment-indicator w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-2.5 md:h-2.5 rounded-full ${i === 0 ? 'bg-[#F45D01]' : 'bg-gray-300 hover:bg-gray-400'} transition-all duration-300 hover:scale-110`;
-        button.setAttribute('data-index', i);
-        indicatorsContainer.appendChild(button);
+        const indicator = document.createElement('div');
+        if (i === 0) {
+            // Active indicator - matches ELi ii project (non-clickable)
+            indicator.className = 'comment-indicator w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-2.5 md:h-2.5 rounded-full bg-[#F45D01] transition-all duration-300';
+        } else {
+            // Inactive indicator - matches ELi ii project (non-clickable)
+            indicator.className = 'comment-indicator w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-2.5 md:h-2.5 rounded-full bg-gray-300 transition-all duration-300';
+        }
+        indicator.setAttribute('data-index', i);
+        indicatorsContainer.appendChild(indicator);
     }
 }
 

@@ -1302,17 +1302,7 @@ if (commentsWrapper && commentCards.length > 0) {
         showComment(0);
     }
     
-    // Add click handlers to indicators
-    commentIndicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showComment(index);
-            // Reset auto-rotate timer
-            if (autoRotateInterval) {
-                clearInterval(autoRotateInterval);
-                startAutoRotate();
-            }
-        });
-    });
+    // Indicators are non-clickable - comments auto-rotate only
     
     // Auto-rotate comments
     const startAutoRotate = () => {
