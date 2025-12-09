@@ -24,28 +24,6 @@
     },
     {
       "id": 2,
-      "title": "Christa Valley International",
-      "category": "Digital",
-      "subcategory": "Brand System",
-      "description": "Identity \u00b7 Branding \u00b7 Design",
-      "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236106/cover_hsbnd4.jpg",
-      "mediaType": "image",
-      "mediaSources": [
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235995/Christa_Valley_Page_01_aoiq1b.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235992/Christa_Valley_Page_05_sjtghr.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235991/Christa_Valley_Page_06_fklocx.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235987/Christa_Valley_Page_07_lzpysh.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235985/Christa_Valley_Page_08_tqhpkc.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235986/Christa_Valley_Page_09_baca3f.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235993/Christa_Valley_Page_11_tqezm7.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235990/Christa_Valley_Page_12_tkyrwg.jpg",
-        "https://res.cloudinary.com/dimolecad/image/upload/v1765235988/Christa_Valley_Page_13_vdze7h.jpg"
-      ],
-      "youtubeId": null,
-      "youtubeThumbnail": null
-    },
-    {
-      "id": 3,
       "title": "Glory Theatre Productions",
       "category": "Digital",
       "subcategory": "Brand System",
@@ -78,7 +56,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Book Cover Design",
       "category": "Print",
       "subcategory": "Cover Design",
@@ -95,7 +73,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "Trek Brand",
       "category": "Digital",
       "subcategory": "Brand System",
@@ -114,7 +92,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "Glorious Voices",
       "category": "Digital",
       "subcategory": "Brand System",
@@ -132,7 +110,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 7,
+      "id": 6,
       "title": "3D Renderings",
       "category": "Digital",
       "subcategory": "Project",
@@ -153,7 +131,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 8,
+      "id": 7,
       "title": "Revv'd Up",
       "category": "Digital",
       "subcategory": "Project",
@@ -171,7 +149,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "PSS Urbania - Company Profile Photography",
       "category": "Digital",
       "subcategory": "Project",
@@ -190,7 +168,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "Mo Awudu - Spray Painting Kudus",
       "category": "Digital",
       "subcategory": "Project",
@@ -213,7 +191,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "Cooke Media Bible Listening Session",
       "category": "Video",
       "subcategory": "YouTube",
@@ -225,7 +203,7 @@
       "youtubeThumbnail": "8ZoAk7A5TVg"
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "Borehole Drilling - Pakro Nsawon",
       "category": "Digital",
       "subcategory": "Project",
@@ -247,7 +225,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 13,
+      "id": 12,
       "title": "YouTube Video Collection",
       "category": "Video",
       "subcategory": "YouTube",
@@ -259,7 +237,7 @@
       "youtubeThumbnail": "v-K6ryxJcNg"
     },
     {
-      "id": 14,
+      "id": 13,
       "title": "Poster & Flyer Designs",
       "category": "Digital",
       "subcategory": "Project",
@@ -284,7 +262,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 15,
+      "id": 14,
       "title": "Photography Gallery",
       "category": "Digital",
       "subcategory": "Project",
@@ -313,7 +291,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 16,
+      "id": 15,
       "title": "Motion and Video Productions",
       "category": "Digital",
       "subcategory": "Project",
@@ -333,7 +311,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 17,
+      "id": 16,
       "title": "Drone Photo & Video",
       "category": "Digital",
       "subcategory": "Project",
@@ -351,7 +329,7 @@
       "youtubeThumbnail": null
     },
     {
-      "id": 18,
+      "id": 17,
       "title": "Skate Sunday - Short Film",
       "category": "Video",
       "subcategory": "YouTube",
