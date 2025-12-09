@@ -135,7 +135,7 @@
       "title": "Revv'd Up",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Identity · Design · Social Media",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765235981/revvd_up_Page_3_sqxchv.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -153,7 +153,7 @@
       "title": "PSS Urbania - Company Profile Photography",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Photography · Editorial · Corporate",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236007/cover_ds2sc4.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -172,7 +172,7 @@
       "title": "Mo Awudu - Spray Painting Kudus",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Photography · Editorial · Documentary",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765235974/cover_orwhs4.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -207,7 +207,7 @@
       "title": "Borehole Drilling - Pakro Nsawon",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Photography · Editorial · Documentary",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765235973/cover_vmtoa3.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -241,7 +241,7 @@
       "title": "Poster & Flyer Designs",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Design · Social Media",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765235965/cover_ww1ak4.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -266,7 +266,7 @@
       "title": "Photography Gallery",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Photography · Documentary",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236022/cover_ix9th2.jpg",
       "mediaType": "image",
       "mediaSources": [
@@ -295,7 +295,7 @@
       "title": "Motion and Video Productions",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Cinematography · Video Editing · Directing",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236024/cover_nmdjtl.jpg",
       "mediaType": "video",
       "mediaSources": [
@@ -315,7 +315,7 @@
       "title": "Drone Photo & Video",
       "category": "Digital",
       "subcategory": "Project",
-      "description": "",
+      "description": "Photography · Video · Directing",
       "coverImage": "https://res.cloudinary.com/dimolecad/image/upload/v1765236026/cover_szbdac.jpg",
       "mediaType": "mixed",
       "mediaSources": [
@@ -339,6 +339,19 @@
       "mediaSources": [],
       "youtubeId": "ukJNryzSGGo",
       "youtubeThumbnail": "ukJNryzSGGo"
+    },
+    {
+      "id": 18,
+      "title": "James Barnor Photo Exhibition | Nubuke",
+      "category": "Video",
+      "subcategory": "YouTube",
+      "description": "Video \u00b7 Content \u00b7 Production",
+      "coverImage": "https://img.youtube.com/vi/Y9x4Yl7zMa8/maxresdefault.jpg",
+      "coverImageUrl": "https://img.youtube.com/vi/Y9x4Yl7zMa8/maxresdefault.jpg",
+      "mediaType": "youtube",
+      "mediaSources": [],
+      "youtubeId": "Y9x4Yl7zMa8",
+      "youtubeThumbnail": "Y9x4Yl7zMa8"
     }
   ]
 }

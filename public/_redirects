@@ -1,5 +1,5 @@
 # Netlify Redirects
 # Ensure /admin route works correctly for Netlify CMS
 
-/admin/*  /Admin/index.html  200
+/admin/*  /admin/index.html  200
 
