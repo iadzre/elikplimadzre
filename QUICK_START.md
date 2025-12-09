@@ -22,6 +22,14 @@ All checks completed! Your repository is ready for GitHub.
 # Navigate to elikplimadzre folder
 cd elikplimadzre
 
+# Configure Git (First Time Setup)
+git config user.name "Elikplim Adzre"
+git config user.email "iadzre@gmail.com"
+
+# Or set globally for all repositories:
+git config --global user.name "Elikplim Adzre"
+git config --global user.email "iadzre@gmail.com"
+
 # Initialize Git repository
 git init
 

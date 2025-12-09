@@ -36,11 +36,27 @@ The following are automatically excluded via `.gitignore`:
 
 ## 🚀 Git Commands
 
-If repository is not initialized:
+### Configure Git (First Time Setup)
+
+```bash
+# Set your name and email (required for commits)
+git config user.name "Elikplim Adzre"
+git config user.email "iadzre@gmail.com"
+
+# Or set globally for all repositories:
+git config --global user.name "Elikplim Adzre"
+git config --global user.email "iadzre@gmail.com"
+```
+
+### If repository is not initialized:
 
 ```bash
 # Initialize Git
 git init
+
+# Configure Git (if not already done)
+git config user.name "Elikplim Adzre"
+git config user.email "iadzre@gmail.com"
 
 # Add all files
 git add .
@@ -49,7 +65,7 @@ git add .
 git commit -m "Initial commit: Portfolio website with Cloudinary integration"
 
 # Add remote (replace with your repository URL)
-git remote add origin https://github.com/yourusername/your-repo.git
+git remote add origin https://github.com/iadzre/elikplimadzre.git
 
 # Push to remote
 git push -u origin main
