@@ -220,7 +220,13 @@ function renderComments(comments) {
     // Update indicators (non-clickable, visual only)
     updateCommentIndicators(comments.length);
     
-    // Comment carousel auto-rotates - indicators are visual only
+    // Re-initialize comment carousel after CMS loads
+    // Trigger the carousel initialization from main.js
+    setTimeout(() => {
+        // Dispatch custom event to reinitialize carousel
+        const event = new CustomEvent('commentsLoaded');
+        document.dispatchEvent(event);
+    }, 100);
 }
 
 function updateCommentIndicators(count) {

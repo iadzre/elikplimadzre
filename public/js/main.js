@@ -1272,20 +1272,21 @@ if (projectModal) {
 // Client Comments Carousel
 const commentsWrapper = document.querySelector('.client-comments-wrapper');
 const commentCards = document.querySelectorAll('.client-comment-card');
-const commentIndicators = document.querySelectorAll('.comment-indicator');
 
 if (commentsWrapper && commentCards.length > 0) {
     let currentCommentIndex = 0;
     let autoRotateInterval;
     
     const updateIndicators = (index) => {
+        // Query indicators dynamically to handle CMS-loaded content
+        const commentIndicators = document.querySelectorAll('.comment-indicator');
         commentIndicators.forEach((indicator, i) => {
             if (i === index) {
-                // Active indicator
+                // Active indicator - wider pill shape
                 indicator.className = 'comment-indicator w-8 h-2 rounded-full bg-[#F45D01] transition-all duration-300';
             } else {
-                // Inactive indicator
-                indicator.className = 'comment-indicator w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300';
+                // Inactive indicator - small circle
+                indicator.className = 'comment-indicator w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
             }
         });
     };
@@ -1327,3 +1328,66 @@ if (commentsWrapper && commentCards.length > 0) {
         });
     }
 }
+
+// Re-initialize carousel when CMS loads comments dynamically
+document.addEventListener('commentsLoaded', () => {
+    const commentsWrapper = document.querySelector('.client-comments-wrapper');
+    const commentCards = document.querySelectorAll('.client-comment-card');
+    
+    if (commentsWrapper && commentCards.length > 0) {
+        let currentCommentIndex = 0;
+        let autoRotateInterval;
+        
+        const updateIndicators = (index) => {
+            // Query indicators dynamically to handle CMS-loaded content
+            const commentIndicators = document.querySelectorAll('.comment-indicator');
+            commentIndicators.forEach((indicator, i) => {
+                if (i === index) {
+                    // Active indicator - wider pill shape
+                    indicator.className = 'comment-indicator w-8 h-2 rounded-full bg-[#F45D01] transition-all duration-300';
+                } else {
+                    // Inactive indicator - small circle
+                    indicator.className = 'comment-indicator w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+                }
+            });
+        };
+        
+        const showComment = (index) => {
+            // Update wrapper transform
+            commentsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            currentCommentIndex = index;
+            updateIndicators(index);
+        };
+        
+        // Initialize first comment
+        if (commentCards.length > 0) {
+            showComment(0);
+        }
+        
+        // Auto-rotate comments
+        const startAutoRotate = () => {
+            if (autoRotateInterval) {
+                clearInterval(autoRotateInterval);
+            }
+            autoRotateInterval = setInterval(() => {
+                const nextIndex = (currentCommentIndex + 1) % commentCards.length;
+                showComment(nextIndex);
+            }, 5000); // Change every 5 seconds
+        };
+        
+        // Start auto-rotate
+        startAutoRotate();
+        
+        // Pause on hover
+        const commentsSection = document.querySelector('.client-comments-section');
+        if (commentsSection) {
+            commentsSection.addEventListener('mouseenter', () => {
+                clearInterval(autoRotateInterval);
+            });
+            
+            commentsSection.addEventListener('mouseleave', () => {
+                startAutoRotate();
+            });
+        }
+    }
+});
